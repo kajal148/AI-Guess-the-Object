@@ -14,7 +14,7 @@ const renderBox = (predictions: any, context: any) => {
         const score = prediction?.score * 100;
 
         context.strokeStyle = '#00FF00';
-        context.fillStyle = 'pink';
+        context.fillStyle = '#fff';
         context.lineWidth = 3;
         context.strokeRect(x, y, width, height);
 

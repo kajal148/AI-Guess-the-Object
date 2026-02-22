@@ -12,7 +12,6 @@ const Realtime = () => {
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  
   const loadModel = async () => {
     setIsLoading(true);
 
@@ -53,7 +52,7 @@ const Realtime = () => {
       const width = webcamRef.current.video.videoWidth;
       const height = webcamRef.current.video.videoHeight;
 
-      //set the height and widht of the video before sending it to the model
+      //set the height and width of the video before sending it to the model
       webcamRef.current.video.width = width;
       webcamRef.current.video.height = height;
     }
@@ -76,21 +75,21 @@ const Realtime = () => {
 
   return (
       <div className="flex flex-col items-center justify-center relative w-full h-full">
-          <Webcam 
-            ref={webcamRef}
-            className="rounded-lg"
-            muted
-            audio={false}
-            videoConstraints={{
-              facingMode: "user"
-            }}
-            mirrored={true}
-          />
-          <canvas ref={canvasRef}
-            className="absolute top-0 left-50 z-1000"
-            width={webcamRef.current?.video?.videoWidth}
-            height={webcamRef.current?.video?.videoHeight}
-          />
+        <Webcam 
+          ref={webcamRef}
+          className="rounded-lg"
+          muted
+          audio={false}
+          videoConstraints={{
+            facingMode: "user"
+          }}
+          mirrored={true}
+        />
+        <canvas ref={canvasRef}
+          className="absolute top-0 left-50 z-1000"
+          width={webcamRef.current?.video?.videoWidth}
+          height={webcamRef.current?.video?.videoHeight}
+        />
       </div>
   )
 }
